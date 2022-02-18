@@ -19,7 +19,7 @@ class SportSelect extends StatelessWidget {
           Text("Warm up mode"),
           Text("Racket Sports"),
           Text("Cricket"),
-          Text("Custo")
+          Text("Custom")
         ],
       ),
     );
