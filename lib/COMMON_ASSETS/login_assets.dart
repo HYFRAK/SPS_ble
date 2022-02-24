@@ -1,36 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:sps_ble/COMMON_ASSETS/styles.dart';
+import 'package:sps_ble/LANDING/custom.dart';
 
-class EmailArea extends StatelessWidget {
-  const EmailArea({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return const TextField(
-      autofillHints: ["Email", "Username"],
-      decoration:
-          InputDecoration(hintText: "Enter your registered email or username"),
-    );
-  }
-}
 
-class PassArea extends StatelessWidget {
-  const PassArea({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const TextField(
-      autofillHints: ["Password"],
-      obscureText: true,
-      decoration: InputDecoration(hintText: "Enter your password"),
-    );
-  }
-}
 
 class LoginButton extends StatelessWidget {
   const LoginButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Login"));
+    return Container(
+        child: Text(
+      "Login",
+      style: ButtonStyle1,
+    ));
   }
 }

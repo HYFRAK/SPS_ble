@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "733861939383",
+    "project_id": "solipsist-sps",
+    "storage_bucket": "solipsist-sps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733861939383:android:3b4c286571047dccc12532",
+        "android_client_info": {
+          "package_name": "com.example.sps_ble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733861939383-9patq6r75h2k8m11n8m5e1gdcaerdvfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSbgEJ_xP625kGE4GMgncqv1QDKucbXlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733861939383-9patq6r75h2k8m11n8m5e1gdcaerdvfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
