@@ -9,6 +9,13 @@ const Body1Style = TextStyle(
     fontSize: 17.0,
     color: Colors.white);
 
+const Body0Style = TextStyle(
+    fontFamily: FontNameDefault,
+    fontWeight: FontWeight.w300,
+    fontSize: 20.0,
+    color: Colors.white);
+
+
 const Body2Style = TextStyle(
     fontFamily: FontNameDefault,
     fontWeight: FontWeight.w300,
@@ -31,4 +38,10 @@ const ButtonStyle1 = TextStyle(
     fontFamily: FontNameDefault,
     fontWeight: FontWeight.w300,
     fontSize: 22.0,
+    color: Colors.white);
+
+const TitleStyle1 = TextStyle(
+    fontFamily: FontNameDefault,
+    fontWeight: FontWeight.w300,
+    fontSize: 35.0,
     color: Colors.white);

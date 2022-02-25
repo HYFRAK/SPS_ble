@@ -4,6 +4,7 @@ import 'package:sps_ble/COMMON_ASSETS/common.dart';
 import 'package:sps_ble/COMMON_ASSETS/login_assets.dart';
 import 'package:sps_ble/COMMON_ASSETS/sports_select_assets.dart';
 import 'package:sps_ble/COMMON_ASSETS/styles.dart';
+import 'package:sps_ble/LANDING/custom.dart';
 
 class SportSelect extends StatelessWidget {
   SportSelect({Key? key}) : super(key: key);
@@ -31,6 +32,15 @@ class SportSelect extends StatelessWidget {
     "Custom1":
         "Training and HIIT excercise boosters designed by expert trainers."
   };
+
+  final Map sportpush = {
+    "Custom": CustomMode(),
+    "Cricket": CustomMode(),
+    "Racket Sports": CustomMode(),
+    "Warm up mode": CustomMode(),
+    "Custom1": CustomMode()
+  };
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -81,6 +91,7 @@ class SportSelect extends StatelessWidget {
                           text: e,
                           url: sportbar[e],
                           info: sportinfo[e],
+                          x: sportpush[e],
                         ))
                     .toList(),
               ),

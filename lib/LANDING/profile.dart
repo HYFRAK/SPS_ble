@@ -23,7 +23,7 @@ class UserProfilePage extends StatelessWidget {
                       "https://images.unsplash.com/photo-1483721310020-03333e577078"),
                   fit: BoxFit.cover)),
           child: Container(
-            color: Colors.black45,
+            color: Colors.black54,
           ),
         ),
         SingleChildScrollView(
@@ -55,6 +55,17 @@ class UserProfilePage extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.07,
               ),
+              GestureDetector(
+                onTap: () {
+                  auth.signOut();
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: Text(
+                  "Sign Out",
+                  style: Body1Style,
+                ),
+              )
             ],
           ),
         ),
