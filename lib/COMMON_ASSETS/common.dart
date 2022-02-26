@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sps_ble/BLE/blehome.dart';
+import 'package:sps_ble/COMMON_ASSETS/styles.dart';
 import 'package:sps_ble/LANDING/profile.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class CommonAppbar extends StatelessWidget {
   const CommonAppbar({Key? key}) : super(key: key);
@@ -17,12 +19,22 @@ class CommonAppbar extends StatelessWidget {
   }
 }
 
-class bluetoothfloater extends StatelessWidget {
-  const bluetoothfloater({Key? key}) : super(key: key);
+class bluetoothfloater extends StatefulWidget {
+  bluetoothfloater({Key? key}) : super(key: key);
+
+  @override
+  State<bluetoothfloater> createState() => _bluetoothfloaterState();
+}
+
+class _bluetoothfloaterState extends State<bluetoothfloater> {
+  void statechanger() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      //splashColor: Colors.white,
       backgroundColor: Colors.transparent,
       //foregroundColor: Colors.transparent,
       onPressed: () {
@@ -31,8 +43,16 @@ class bluetoothfloater extends StatelessWidget {
       },
       child: Container(
         padding: EdgeInsets.all(4),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.transparent.withOpacity(0.4),
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: Offset(2, 4),
+            ),
+          ],
+          image: const DecorationImage(
               image: CachedNetworkImageProvider(
                   "https://www.pikpng.com/pngl/b/284-2842487_amazon-dot-rd-gen-amazon-echo-dot-3rd.png")),
           shape: BoxShape.circle,
@@ -81,5 +101,62 @@ class BackButton1 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ColorPalletes extends StatefulWidget {
+  ColorPalletes({Key? key}) : super(key: key);
+
+  @override
+  State<ColorPalletes> createState() => _ColorPalletesState();
+}
+
+class _ColorPalletesState extends State<ColorPalletes> {
+  Color pickerColor = const Color(0xffff3a49);
+  Color currentColor = const Color(0xffff3a49);
+
+  void changeColor(color) {
+    setState(() {
+      currentColor = color;
+      pickerColor = color;
+    });
+  }
+
+  void showcolor() {
+    Navigator.push(
+        context,
+        DialogRoute(
+            context: context,
+            builder: (context) {
+              return SimpleDialog(
+                backgroundColor: Colors.transparent,
+                title: ColorPicker(
+                    labelTypes: const [],
+                    pickerColor: pickerColor,
+                    enableAlpha: false,
+                    onColorChanged: changeColor),
+              );
+            }));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        onTap: showcolor,
+        child: Container(
+          //decoration: BoxDecoration(border: Border.all(color: Colors.white)),
+          child: Row(
+            children: [
+              const SizedBox(
+                width: 12,
+              ),
+              Container(
+                height: 25,
+                width: 50,
+                color: currentColor,
+              )
+            ],
+          ),
+        ));
   }
 }

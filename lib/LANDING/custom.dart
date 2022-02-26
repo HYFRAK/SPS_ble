@@ -37,10 +37,12 @@ class _CustomModeState extends State<CustomMode> {
   String seqdropdownvalue = "Random";
   String placedropdownvalue = "3R 3L";
   String aiddropdownvalue = "All Light";
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     double leftpadd = 12;
+    const double heightd = 25;
     return Scaffold(
       floatingActionButton: bluetoothfloater(),
       body: Stack(children: [
@@ -48,7 +50,7 @@ class _CustomModeState extends State<CustomMode> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   image: CachedNetworkImageProvider(
-                      "https://images.unsplash.com/photo-1547941126-3d5322b218b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+                      "https://images.unsplash.com/photo-1547941126-3d5322b218b0"),
                   fit: BoxFit.cover)),
           child: Container(
             color: Colors.black45,
@@ -95,7 +97,7 @@ class _CustomModeState extends State<CustomMode> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: DropdownButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_down,
                         color: Colors.white,
                       ),
@@ -117,7 +119,7 @@ class _CustomModeState extends State<CustomMode> {
                 ),
               ),
               SizedBox(
-                height: 12,
+                height: heightd,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -138,7 +140,7 @@ class _CustomModeState extends State<CustomMode> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: DropdownButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_down,
                         color: Colors.white,
                       ),
@@ -159,6 +161,9 @@ class _CustomModeState extends State<CustomMode> {
                           .toList()),
                 ),
               ),
+              SizedBox(
+                height: heightd,
+              ),
               Padding(
                 padding: EdgeInsets.only(
                   left: leftpadd,
@@ -178,7 +183,7 @@ class _CustomModeState extends State<CustomMode> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: DropdownButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.keyboard_arrow_down,
                         color: Colors.white,
                       ),
@@ -198,7 +203,27 @@ class _CustomModeState extends State<CustomMode> {
                               )))
                           .toList()),
                 ),
-              )
+              ),
+              SizedBox(
+                height: heightd,
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: leftpadd,
+                ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Row(
+                    children: [
+                      Text(
+                        "Change Device Color",
+                        style: Body0Style,
+                      ),
+                      ColorPalletes()
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

@@ -14,7 +14,7 @@ class UserProfilePage extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     final auth = FirebaseAuth.instance;
     return Scaffold(
-      floatingActionButton: const bluetoothfloater(),
+      floatingActionButton: bluetoothfloater(),
       body: Stack(children: [
         Container(
           decoration: const BoxDecoration(
